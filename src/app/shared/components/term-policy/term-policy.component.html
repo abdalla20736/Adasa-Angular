@@ -1,0 +1,31 @@
+<div class="policy">
+  <div class="mb-5">
+    <div class="d-flex align-items-start gap-3 mb-3">
+      <div class="rounded-3 index-icon d-flex align-items-center justify-content-center">
+        <span>{{ index }}</span>
+      </div>
+      <div>
+        <h2 class="mb-0">{{ title }}</h2>
+      </div>
+    </div>
+
+    <div class="pe-5">
+      <p class="text-neutral-400 mb-4">{{ paragraph }}</p>
+      <p>{{ titleHeaderDesc }}</p>
+      @for (paragraph of paragraphsDesc; track $index) {
+        <div class="d-flex gap-3 align-items-center mb-2">
+          <i class="fa-solid fa-xmark"></i>
+          <p class="mb-0 text-neutral-400">{{ paragraph }}</p>
+        </div>
+      }
+      @if (email) {
+        <a [href]="'mailto:' + email">
+          <div class="d-flex align-items-center gap-2">
+            <i class="fa-regular fa-envelope text-orange-500"></i>
+            <p class="mb-0 text-orange-500">{{ email }}</p>
+          </div></a
+        >
+      }
+    </div>
+  </div>
+</div>

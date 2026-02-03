@@ -1,0 +1,229 @@
+<main>
+  <section class="position-relative hero p-5">
+    <div class="hero-grid"></div>
+    <div class="position-absolute rounded-circle background-circle-1"></div>
+    <div class="position-absolute rounded-circle background-circle-2"></div>
+    <div
+      class="position-absolute rounded-circle background-circle-3 top-50 start-50 translate-middle"
+    ></div>
+
+    <div class="container">
+      <div
+        class="position-relative hero-info d-flex align-items-center justify-content-center flex-column text-center"
+      >
+        <app-badge> </app-badge>
+        <h1 class="header-title">
+          اكتشف <span class="gradient-text">فن</span> <br />التصوير الفوتوغرافي
+        </h1>
+        <p class="text-neutral-400 fs-4 mb-5">
+          انغمس في أسرار المحترفين ونصائح عملية لتطوير مهاراتك في التصوير.
+        </p>
+        <div class="d-flex align-items-center flex-column flex-sm-row gap-3 mb-5">
+          <a routerLink="/blog" class="btn-primary blog-btn d-flex align-items-center gap-1">
+            <span class="text-white">استكشف المقالات</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a routerLink="/about" class="btn-secondary btn-more d-flex align-items-center gap-1">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>اعرف المزيد </span>
+          </a>
+        </div>
+        <div class="row row-cols-2 row-cols-md-4 g-4 w-100">
+          <div class="col">
+            <app-grass-card value="+50" desc="مقالة" icon="fa-newspaper"></app-grass-card>
+          </div>
+          <div class="col">
+            <app-grass-card value="+10ألف" desc="قارئ" icon="fa-users"></app-grass-card>
+          </div>
+          <div class="col">
+            <app-grass-card value="4" desc="تصنيفات" icon="fa-folder-open"></app-grass-card>
+          </div>
+          <div class="col">
+            <app-grass-card value="6" desc="كاتب" icon="fa-pen-nib"></app-grass-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-blog position-relative">
+    <div class="position-absolute top-0 end-0 overlay overlay-1 h-100 z-n1"></div>
+    <div class="container">
+      <div class="section-blog-info mb-5">
+        <app-badge text="مميز" textColor="gradient-text"></app-badge>
+        <h2 class="header-title-2">مقالات مختارة</h2>
+        <div
+          class="d-flex align-items-start justify-content-between flex-column flex-md-row align-items-md-center gap-3 gap-md-0"
+        >
+          <p class="section-desc-2 mb-0 mt-3 text-neutral-400">محتوى منتقى لبدء رحلة تعلمك</p>
+          <a routerLink="/blog" class="btn-primary blog-btn show-all-btn rounded-4">
+            عرض الكل
+            <i class="fa-solid fa-angle-right"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        @for (postData of posts | slice: 0 : 3; track $index) {
+          <app-blog-post-card [post]="postData"></app-blog-post-card>
+        }
+      </div>
+    </div>
+  </section>
+  <section class="section-categories">
+    <div class="container">
+      <div class="d-flex justify-content-center align-items-center flex-column mb-3">
+        <app-badge text="التصنيفات" textColor="text-orange-500"></app-badge>
+        <h2 class="header-title-2">استكشف حسب الموضوع</h2>
+        <div
+          class="d-flex align-items-start justify-content-between flex-column flex-md-row align-items-md-center gap-3 gap-md-0"
+        >
+          <p class="section-desc-2 mb-0 mt-3 text-neutral-400">اعثر على محتوى مصمم حسب اهتماماتك</p>
+        </div>
+      </div>
+      <div class="row row-cols-2 row-cols-md-4 g-4 w-100">
+        <div class="col">
+          <app-category-card
+            title="إضاءة"
+            icon="fa-sun"
+            [blogsQuantity]="getCategoryCount('إضاءة')"
+            link="/blog"
+            [param]="`إضاءة`"
+          >
+          </app-category-card>
+        </div>
+        <div class="col">
+          <app-category-card
+            title="بورتريه"
+            icon="fa-user"
+            [blogsQuantity]="getCategoryCount('بورتريه')"
+            link="/blog"
+            [param]="`بورتريه`"
+          >
+          </app-category-card>
+        </div>
+        <div class="col">
+          <app-category-card
+            title="مناظر طبيعية"
+            icon="fa-mountain-sun"
+            [blogsQuantity]="getCategoryCount('مناظر طبيعية')"
+            link="/blog"
+            [param]="`مناظر طبيعية`"
+          >
+          </app-category-card>
+        </div>
+        <div class="col">
+          <app-category-card
+            title="تقنيات"
+            icon="fa-sliders"
+            [blogsQuantity]="getCategoryCount('تقنيات')"
+            link="/blog"
+            [param]="`تقنيات`"
+          >
+          </app-category-card>
+        </div>
+        <div class="col">
+          <app-category-card
+            title="معدات"
+            icon="fa-sun"
+            [blogsQuantity]="getCategoryCount('معدات')"
+            link="/blog"
+            [param]="`معدات`"
+          >
+          </app-category-card>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="latest-articles position-relative">
+    <div class="position-absolute top-0 start-0 overlay overlay-2 h-100 z-n1"></div>
+    <div class="container">
+      <div class="section-blog-info mb-5">
+        <app-badge text="الأحدث" textColor="text-orange-500"></app-badge>
+        <h2 class="header-title-2">أحدث المقالات</h2>
+        <div
+          class="d-flex align-items-start justify-content-between flex-column flex-md-row align-items-md-center gap-3 gap-md-0"
+        >
+          <p class="section-desc-2 mb-0 mt-3 text-neutral-400">محتوى جديد طازج من المطبعة</p>
+          <a routerLink="/blog" class="text-orange-500 fw-bold latest-articles-link">
+            عرض جميع المقالات
+            <i class="fa-solid fa-arrow-left-long text-orange-500 fs-14px"></i>
+          </a>
+        </div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+        @for (postData of posts | slice: 3 : 6; track $index) {
+          <app-square-blog-card [post]="postData"></app-square-blog-card>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="subscribe-in position-relative z-3">
+    <div
+      class="position-absolute top-0 start-50 translate-middle-x rounded-circle overlay-3 h-100"
+    ></div>
+    <div class="container d-flex align-items-center justify-content-center">
+      <div class="subscribe-form rounded-4 z-3">
+        <div class="text-center">
+          <div
+            class="subscribe-icon rounded-4 d-flex align-items-center justify-content-center mb-3 mx-auto"
+          >
+            <i class="fa-regular fa-envelope"></i>
+          </div>
+          <h2>اشترك في <span class="gradient-text">نشرتنا الإخبارية </span></h2>
+          <p class="mb-0 text-neutral-400 fs-18px text-center">
+            احصل على نصائح التصوير الحصرية ودروس جديدة مباشرة في بريدك الإلكتروني
+          </p>
+          <form
+            class="d-flex gap-2 gap-md-3 mt-4 flex-column align-items-center flex-md-row mx-auto"
+          >
+            <input
+              class="input-primary"
+              type="text"
+              name="email"
+              id="email"
+              placeholder="ادخل بريدك الإلكتروني"
+            />
+            <button class="border-0 btn-primary">اشترك الآن</button>
+          </form>
+          <div class="mt-3 d-flex align-items-center justify-content-center gap-3 flex-wrap">
+            <div class="d-flex align-items-center gap-2 flex-">
+              <div class="d-flex">
+                <div class="small-avatar-icon rounded-circle overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/photo-1507003211169-0a1dd7228f2d.jpg "
+                    alt=""
+                  />
+                </div>
+                <div class="small-avatar-icon rounded-circle overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/photo-1500648767791-00dcc994a43e.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="small-avatar-icon rounded-circle overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/photo-1472099645785-5658abf4ff4e.jpg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="text-neutral-500 fs-14px">
+                انضم لـ
+                <span class="text-white"> +10,000</span>
+                مصور
+              </div>
+            </div>
+            <span class="dot text-[#262626]">•</span>
+            <div class="fs-14px text-neutral-500">بدون إزعاج</div>
+            <span class="dot text-[#262626]">•</span>
+            <div class="fs-14px text-neutral-500">إلغاء الاشتراك في أي وقت</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

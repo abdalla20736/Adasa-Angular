@@ -1,0 +1,116 @@
+.logo {
+  width: 48px;
+  height: 48px;
+  transition: 0.3s all;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+nav {
+  transition: 0.5s all;
+  background-color: #161616 !important;
+  z-index: 9999;
+  backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid transparent;
+}
+.nav-toggle-button {
+  padding: 12px;
+  i {
+    color: #a3a3a3;
+  }
+}
+
+.logo-desc {
+  color: #ff8904cc;
+  font-size: 12px;
+}
+
+.start-read {
+  padding: 16px 32px;
+  font-size: 14px;
+}
+
+.search {
+  background-color: #161616;
+  padding: 0.75rem;
+
+  border-radius: 0.75rem;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+  i {
+    color: #6b7280;
+  }
+}
+
+.search:hover {
+  i {
+    transition: all 0.3s;
+    color: #f97316;
+  }
+  background-color: #161616;
+  border-color: #262626;
+}
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-collapse {
+  flex-grow: 0 !important;
+}
+
+.nav-button-list {
+  border-radius: 15px;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #262626;
+  .nav-link {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #a3a3a3;
+    font-weight: 500;
+    border-radius: 25px;
+    &:hover {
+      color: white;
+    }
+  }
+}
+.nav-link.active {
+  background: color-mix(in oklab, oklch(70.5% 0.213 47.604) 10%, transparent);
+  --color-border: color-mix(in oklab, oklch(70.5% 0.213 47.604) 30%, transparent);
+  border: 1px solid var(--color-border);
+  color: #f97316 !important;
+  border-radius: 25px;
+}
+
+@media screen and (min-width: 640px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 992px) {
+  .nav-button-list {
+    margin-top: 0px;
+    border-radius: 25px;
+    padding: 6px;
+    border: 1px solid #262626;
+    .nav-link {
+      padding: 10px 20px;
+      font-size: 14px;
+      color: #a3a3a3;
+      font-weight: 500;
+      border-radius: 25px;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  .nav-link.active {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    color: white !important;
+  }
+}

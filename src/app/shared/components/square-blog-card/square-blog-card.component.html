@@ -1,0 +1,44 @@
+<a [routerLink]="['/blog', post.slug]">
+  <div class="square-blog-card d-flex flex-column rounded-4 overflow-hidden mb-4">
+    <div class="overflow-hidden position-relative">
+      <div class="blog-badge position-absolute d-flex align-items-center gap-1 z-3">
+        <i class="fa-solid fa-star text-white"></i>
+        <span>{{ post.category }}</span>
+      </div>
+      <div class="blog-img-overlay position-absolute"></div>
+      <img class="card-banner h-100 w-100 object-fit-cover" [src]="post.image" alt="" />
+    </div>
+    <div class="card-info">
+      <div class="d-flex gap-2 align-items-center mb-3">
+        <span class="badge-time-to-read text-neutral-500">
+          <i class="fa-regular fa-clock text-neutral-500"></i>
+          {{ post.readTime }}
+        </span>
+        <span class="text-neutral-500"> {{ post.date | date: 'dd MMMM yyyy' : '' : 'ar' }}</span>
+      </div>
+      <h2 class="card-header mb-3 fs-5" [textContent]="post.title"></h2>
+      <p class="text-neutral-500 fs-14px">
+        {{ post.excerpt }}
+      </p>
+      <div class="author-info d-flex justify-content-between align-items-center gap-3 pt-4">
+        <div class="d-flex align-items-center gap-2">
+          <div>
+            <img [src]="post.author.avatar" class="blog-avatar-icon rounded-circle" alt="" />
+          </div>
+
+          <div class="author">
+            <p class="mb-0 fw-bold fs-14px lh-1" [textContent]="post.author.name"></p>
+            <span class="text-neutral-500 lh-1"> {{ post.author.role }}</span>
+          </div>
+        </div>
+        <div class="read-post-btn d-flex align-items-center">
+          <div
+            class="blog-link-btn rounded-circle d-flex align-items-center justify-content-center"
+          >
+            <i class="fa-solid fa-angle-left text-orange-500"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>

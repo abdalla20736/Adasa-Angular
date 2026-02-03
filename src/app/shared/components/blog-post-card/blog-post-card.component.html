@@ -1,0 +1,46 @@
+<a
+  [routerLink]="['/blog', post.slug]"
+  class="blog-post d-flex flex-column flex-md-row rounded-4 overflow-hidden mb-4"
+>
+  <div class="overflow-hidden position-relative w-100">
+    <div class="blog-badge position-absolute d-flex align-items-center gap-1 z-3">
+      <i class="fa-solid fa-star text-white"></i>
+      <span>مميز</span>
+    </div>
+    <div class="blog-img-overlay position-absolute"></div>
+    <img class="card-banner h-100 w-100 object-fit-cover" [src]="post.image" alt="" />
+  </div>
+  <div class="card-info w-100">
+    <div class="d-flex gap-2 align-items-center mb-3">
+      <div class="badge-blog-info">
+        <span>{{ post.category }}</span>
+      </div>
+
+      <span class="badge-time-to-read text-neutral-500">
+        <i class="fa-regular fa-clock text-neutral-500"></i>
+        {{ post.readTime }}
+      </span>
+    </div>
+    <h2 class="card-header mb-3" [textContent]="post.title"></h2>
+    <p class="text-neutral-500 mb-4">
+      {{ post.excerpt }}
+    </p>
+    <div class="author-info d-flex justify-content-between align-items-center gap-3">
+      <div class="d-flex align-items-center gap-2">
+        <div class="position-relative">
+          <div class="online-signture position-absolute"></div>
+          <img [src]="post.author.avatar" class="blog-avatar-icon rounded-circle" alt="" />
+        </div>
+
+        <div class="author">
+          <p class="mb-0 fw-bold fs-14px" [textContent]="post.author.name"></p>
+          <span class="text-neutral-500"> {{ post.date | date: 'dd MMMM yyyy' : '' : 'ar' }}</span>
+        </div>
+      </div>
+      <div class="read-post-btn d-flex align-items-center">
+        <span class="read-post-text"> اقرأ المقال </span>
+        <i class="fa-solid fa-arrow-left-long"></i>
+      </div>
+    </div>
+  </div>
+</a>

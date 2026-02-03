@@ -1,0 +1,192 @@
+<main>
+  <section class="position-relative hero p-5 z-10">
+    <div class="blog-grid"></div>
+    <div class="position-absolute rounded-circle background-circle-1"></div>
+    <div class="position-absolute rounded-circle background-circle-2"></div>
+
+    <div class="container">
+      <div
+        class="position-relative blog-info d-flex align-items-center justify-content-center flex-column text-center"
+      >
+        <app-badge text="مدونتنا" textColor="text-orange-500" [icon]="true"> </app-badge>
+        <h1 class="header-title">استكشف <span class="gradient-text">مقالاتنا</span> <br /></h1>
+        <p class="text-neutral-400 fs-5">اكتشف الدروس والرؤى وأفضل الممارسات للتطوير الحديث</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-filter position-sticky">
+    <div class="container px-0">
+      <div
+        class="filter-menu d-flex justify-content-between align-items-center py-3 flex-column flex-md-row gap-3 w-100"
+      >
+        <form class="d-flex flex-grow-1 flex-md-grow-0 w-100">
+          <div class="d-flex align-items-center position-relative flex-fill flex-md-grow-0">
+            <i
+              class="fas fa-search text-neutral-500 fs-5 position-absolute icon-search translate-middle-y"
+            ></i>
+
+            <input
+              [(ngModel)]="searchText"
+              (ngModelChange)="filterPosts()"
+              (keydown.enter)="$event.preventDefault()"
+              class="input-primary w-100"
+              type="text"
+              name="text"
+              id="blog-search"
+              placeholder="ابحث في المقالات..."
+            />
+          </div>
+        </form>
+
+        <div
+          class="d-flex align-items-center gap-2 flex-wrap flex-grow-1 w-100 justify-content-md-end justify-content-center"
+        >
+          <button
+            class="category-btn text-neutral-400 fs-14px"
+            (click)="setActiveCategory('')"
+            [class.active]="activeCategory == ''"
+          >
+            جميع المقالات
+          </button>
+          @for (category of categories; track $index) {
+            <button
+              (click)="setActiveCategory(category.name)"
+              [class.active]="activeCategory === category.name"
+              class="category-btn text-neutral-400 fs-14px"
+            >
+              {{ category.name }}
+            </button>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+  <section #blogSection class="section-blogs">
+    <div class="container px-0">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <p class="mb-0 text-neutral-500 fs-6">
+          عرض <span class="text-white"> {{ posts.length }}</span> مقالات
+          @if (activeCategory != '') {
+            <span class="text-neutral-500 fs-6"
+              >فى <span class="text-orange-500 fs-6 fw-bold">{{ activeCategory }}</span></span
+            >
+          }
+        </p>
+        <div class="d-flex align-items-center">
+          <div
+            class="view-actions-menu rounded-4 p-1 d-flex align-items-center justify-content-center"
+          >
+            <button
+              class="view-btn border-0 p-2 rounded-3 d-flex align-items-center justify-content-center"
+              title="عرض شبكى"
+              [class.active]="isList"
+              (click)="changeView(true)"
+            >
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+                ></path>
+              </svg>
+            </button>
+            <button
+              class="view-btn border-0 p-2 rounded-3 d-flex align-items-center justify-content-center active"
+              title="عرض قائمة"
+              [class.active]="!isList"
+              (click)="changeView(false)"
+            >
+              <i class="fa-solid fa-bars fs-18px text-neutral-400"> </i>
+            </button>
+          </div>
+          <button
+            (click)="clearFilters()"
+            class="clear-filter-btn btn bg-transparent text-neutral-500 d-flex gap-1 align-items-center justify-content-center fs-14px"
+            [class.d-none]="activeCategory == '' && searchText == ''"
+          >
+            <i class="fa-solid fa-xmark text-neutral-500 fs-12px"></i>
+            مسح الفلاتر
+          </button>
+        </div>
+      </div>
+      <div [className]="isList ? 'row row-cols-1 row-cols-md-2 row-cols-lg-3' : ''" class="row">
+        @for (
+          postData of posts | slice: currentPage * pageSize : currentPage * pageSize + pageSize;
+          track $index
+        ) {
+          @if (isList) {
+            <app-square-blog-card [post]="postData"></app-square-blog-card>
+          } @else {
+            <app-blog-post-view [post]="postData"></app-blog-post-view>
+          }
+        } @empty {
+          <div
+            class="empty-page d-flex align-items-center justify-content-center flex-column gap-3"
+          >
+            <div class="empty-icon rounded-circle d-flex align-items-center justify-content-center">
+              <i class="fa-regular fa-face-frown text-neutral-500 fs-1"></i>
+            </div>
+            <h3 class="fw-bold fs-4">لا توجد مقالات</h3>
+            <p class="mb-0 text-neutral-500 mb-1">
+              حاول تعديل البحث أو الفلتر للعثور على ما تبحث عنه.
+            </p>
+            <button class="btn-primary border-0">
+              إعادة تعيين الفلاتر
+              <i class="fa-solid fa-arrows-rotate"></i>
+            </button>
+          </div>
+        }
+      </div>
+
+      <div class="pagination d-flex flex-column justify-content-center align-items-center">
+        <div class="d-flex justify-content-center gap-2 flex-wrap">
+          <button
+            (click)="previousPage()"
+            class="pagination-btn d-flex align-items-center justify-content-center"
+            [disabled]="currentPage <= 0"
+            [class.disabled-btn]="currentPage <= 0"
+          >
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </button>
+          <div class="d-flex align-items-center justify-content-center gap-1">
+            @for (page of pages; track $index) {
+              <button
+                class="pagination-btn text-center"
+                (click)="goToPage(page - 1)"
+                [class.active]="currentPage == page - 1"
+              >
+                {{ page }}
+              </button>
+            }
+          </div>
+
+          <button
+            (click)="nextPage()"
+            class="pagination-btn d-flex align-items-center justify-content-center"
+            [disabled]="currentPage >= pages.length - 1"
+            [class.disabled-btn]="currentPage >= pages.length - 1"
+          >
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <p class="mb-0 mt-3 text-neutral-500">صفحة {{ currentPage + 1 }} من {{ totalPages }}</p>
+      </div>
+    </div>
+  </section>
+</main>

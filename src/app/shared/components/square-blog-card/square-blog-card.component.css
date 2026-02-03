@@ -1,0 +1,123 @@
+.blog-badge {
+  background: #0a0a0a;
+  width: fit-content;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 15px;
+  top: 12px;
+  right: 12px;
+  i {
+    font-size: 8px;
+  }
+}
+.badge-blog-info {
+  background-color: #ff69001a;
+  border: 1px solid #ff690033;
+  border-radius: 12px;
+  padding: 3px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  span {
+    color: var(--color-orange-500);
+  }
+}
+
+.badge-time-to-read {
+  font-size: 14px;
+  i {
+    font-size: 10px;
+  }
+}
+.blog-avatar-icon {
+  width: 48px;
+  height: 48px;
+}
+.read-post-btn {
+  span {
+    transition: all 0.3s;
+    color: oklch(70.5% 0.213 47.604);
+    font-size: 14px;
+    font-weight: 600;
+  }
+  i {
+    color: oklch(70.5% 0.213 47.604);
+    font-size: 14px;
+  }
+}
+.square-blog-card {
+  cursor: pointer;
+  border: 1px solid #161616;
+  transition: all 0.3s;
+  .blog-link-btn {
+    border: 1px solid #ff690033;
+    transition: all 0.3s;
+    background-color: #ff69001a;
+    width: 32px;
+    height: 32px;
+    i {
+      transition: all 0.3s;
+    }
+  }
+  &:hover {
+    .blog-link-btn {
+      background-color: var(--color-orange-500);
+      i {
+        color: white;
+      }
+    }
+    transform: translateY(-5px);
+    .card-banner {
+      transform: scale(1.1);
+    }
+    h2 {
+      color: var(--color-orange-500);
+    }
+    .read-post-text {
+      transform: translateX(10px) !important;
+    }
+    .blog-img-overlay {
+      opacity: 1;
+    }
+  }
+}
+.card-info {
+  background-color: #161616;
+  padding: 24px;
+}
+.card-header {
+  transition: 0.3s all;
+  font-size: 30px;
+  font-weight: bold;
+}
+img {
+  transition: all 0.7s;
+}
+.online-signture {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  left: -4px;
+  bottom: -4px;
+  border: 1px solid #161616;
+  background-color: var(--color-orange-500);
+}
+.author-info {
+  border-top: 1px solid #262626;
+  .author {
+    span {
+      font-size: 12px;
+    }
+  }
+}
+
+.blog-img-overlay {
+  transition: all 0.5s;
+  background: linear-gradient(to top, #00000080, transparent, transparent);
+  opacity: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+}

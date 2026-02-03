@@ -1,0 +1,124 @@
+<main>
+  <section class="position-relative mt-5 p-5">
+    <div class="web-grid"></div>
+    <div class="position-absolute rounded-circle background-circle-1"></div>
+
+    <div class="container">
+      <div
+        class="position-relative section-info d-flex align-items-center justify-content-center flex-column text-center"
+      >
+        <div class="d-flex align-items-center mb-4 nav gap-2">
+          <a routerLink="/" class="text-neutral-400 fs-14px">الرئيسية</a>
+          <i class="fa-solid fa-angle-left text-neutral-600"></i>
+          <p class="mb-0 text-orange-500">سياسة الخصوصية</p>
+        </div>
+        <div class="header-icon d-flex align-items-center justify-content-center mb-4">
+          <i class="fa-regular fa-file-lines text-orange-500"></i>
+        </div>
+
+        <h2 class="header-title">سياسة الخصوصية</h2>
+        <p class="text-neutral-400 fs-18px last-update">آخر تحديث: 15 يناير 2026</p>
+      </div>
+    </div>
+  </section>
+  <section class="privicies">
+    <div class="container">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="inner-container d-flex justify-content-center flex-column">
+          <div class="notification rounded-4 d-flex align-items-start gap-3">
+            <svg class="shield-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              ></path>
+            </svg>
+            <div class="d-flex flex-column">
+              <h3 class="fs-6 text-orange-500">خصوصيتك تهمنا</h3>
+              <p class="fs-14px mb-0">
+                نحن ملتزمون بحماية معلوماتك الشخصية والشفافية بشأن ما نجمعه.
+              </p>
+            </div>
+          </div>
+          <app-privacy-policy
+            [index]="1"
+            title="مقدمة"
+            paragraph="مرحباً بك في عدسة. نحن نحترم خصوصيتك وملتزمون بحماية بياناتك الشخصية. ستعلمك سياسة الخصوصية هذه بكيفية العناية ببياناتك الشخصية عند زيارة موقعنا وتخبرك عن حقوق الخصوصية الخاصة بك."
+          ></app-privacy-policy>
+
+          <app-privacy-policy
+            [index]="2"
+            title="المعلومات التي نجمعها"
+            [paragraphsHeaders]="[
+              'بيانات الهوية:',
+              'بيانات الاتصال:',
+              'البيانات التقنية:',
+              'بيانات الاستخدام:',
+            ]"
+            [paragraphsDesc]="[
+              'تشمل الاسم الأول، الاسم الأخير، اسم المستخدم أو معرف مشابه.',
+              'تشمل عنوان البريد الإلكتروني.',
+              'تشمل عنوان IP، نوع المتصفح، المنطقة الزمنية، ونظام التشغيل.',
+              'تشمل معلومات حول كيفية استخدامك لموقعنا وخدماتنا.',
+            ]"
+            paragraph="مرحباً بك في عدسة. نحن نحترم خصوصيتك وملتزمون بحماية بياناتك الشخصية. ستعلمك سياسة الخصوصية هذه بكيفية العناية ببياناتك الشخصية عند زيارة موقعنا وتخبرك عن حقوق الخصوصية الخاصة بك."
+          ></app-privacy-policy>
+
+          <app-privacy-policy
+            [index]="3"
+            title="كيف نستخدم معلوماتك"
+            [paragraphsDesc]="[
+              'لتقديم خدمتنا والحفاظ عليها',
+              'لإخطارك بالتغييرات في خدمتنا',
+              'لتقديم دعم العملاء',
+              'لجمع تحليلات أو معلومات قيمة لتحسين خدمتنا',
+              'لمراقبة استخدام خدمتنا',
+              'لاكتشاف ومنع ومعالجة المشاكل التقنية',
+            ]"
+            paragraph="مرحباً بك في عدسة. نحن نحترم خصوصيتك وملتزمون بحماية بياناتك الشخصية. ستعلمك سياسة الخصوصية هذه بكيفية العناية ببياناتك الشخصية عند زيارة موقعنا وتخبرك عن حقوق الخصوصية الخاصة بك."
+          ></app-privacy-policy>
+
+          <app-privacy-policy
+            [index]="4"
+            title="ملفات تعريف الارتباط"
+            paragraph="نستخدم ملفات تعريف الارتباط وتقنيات التتبع المشابهة لتتبع النشاط على موقعنا. يمكنك توجيه متصفحك لرفض جميع ملفات تعريف الارتباط أو للإشارة عند إرسال ملف تعريف ارتباط. ومع ذلك، إذا لم تقبل ملفات تعريف الارتباط، فقد لا تتمكن من استخدام بعض أجزاء موقعنا."
+          ></app-privacy-policy>
+
+          <app-privacy-policy
+            [index]="5"
+            title="أمان البيانات"
+            paragraph="لقد وضعنا تدابير أمنية مناسبة لمنع فقدان بياناتك الشخصية أو استخدامها أو الوصول إليها بشكل غير مصرح به عن طريق الخطأ. نحن نحد الوصول إلى بياناتك الشخصية لأولئك الذين لديهم حاجة عملية للمعرفة."
+          ></app-privacy-policy>
+
+          <app-privacy-policy
+            [index]="6"
+            title="حقوقك"
+            [paragraphsDesc]="[
+              'طلب الوصول إلى بياناتك الشخصية',
+              'طلب تصحيح بياناتك الشخصية',
+              'طلب مسح بياناتك الشخصية',
+              'الاعتراض على معالجة بياناتك الشخصية',
+              'طلب تقييد معالجة بياناتك الشخصية',
+              'الحق في سحب الموافقة',
+            ]"
+          ></app-privacy-policy>
+
+          <app-privacy-policy
+            [index]="7"
+            title="تواصل معنا"
+            paragraph="إذا كان لديك أي أسئلة حول سياسة الخصوصية هذه، يرجى التواصل معنا:"
+            [email]="email"
+          ></app-privacy-policy>
+
+          <div class="mt-4 p-4 pt-5 privicies-footer">
+            <p class="text-neutral-500 fs-14px text-center">
+              باستخدام موقعنا، فإنك توافق على شروط الخدمة هذه. انظر أيضاً
+              <a class="text-orange-500" routerLink="/terms">شروط الخدمة</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,56 @@
+.animate-ping {
+  animation: ping 1s infinite;
+}
+.rounded-dot-1 {
+  width: 6px;
+  height: 6px;
+  background: var(--color-orange-500);
+  border-radius: 50%;
+}
+
+.rounded-dot-2 {
+  width: 8px;
+  height: 8px;
+  background: var(--color-orange-500);
+  border-radius: 50%;
+}
+
+.fade-in {
+  animation: fadeIn 1s infinite alternate;
+}
+
+svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-orange-500);
+}
+.section-badge {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #f97316;
+  background: #f973161a;
+  border: 1px solid #f973164d;
+  border-radius: 3.40282e38px;
+  width: fit-content;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

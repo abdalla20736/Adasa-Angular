@@ -1,0 +1,102 @@
+<main>
+  <section class="position-relative mt-5 p-5">
+    <div class="web-grid"></div>
+    <div class="position-absolute rounded-circle background-circle-1"></div>
+
+    <div class="container">
+      <div
+        class="position-relative section-info d-flex align-items-center justify-content-center flex-column text-center"
+      >
+        <div class="d-flex align-items-center mb-4 nav gap-2">
+          <a routerLink="/" class="text-neutral-400 fs-14px">الرئيسية</a>
+          <i class="fa-solid fa-angle-left text-neutral-600"></i>
+          <p class="mb-0 text-orange-500">شروط الخدمة</p>
+        </div>
+        <div class="header-icon d-flex align-items-center justify-content-center mb-4">
+          <i class="fa-regular fa-file-lines text-orange-500"></i>
+        </div>
+
+        <h2 class="header-title">شروط الخدمة</h2>
+        <p class="text-neutral-400 fs-18px last-update">آخر تحديث: 15 يناير 2026</p>
+      </div>
+    </div>
+  </section>
+  <section class="terms">
+    <div class="container">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="inner-container d-flex justify-content-center flex-column">
+          <div class="notification rounded-4 d-flex align-items-start gap-3">
+            <i class="fa-solid fa-triangle-exclamation text-yellow-500 mt-1 fs-4"></i>
+            <div class="d-flex flex-column">
+              <h3 class="fs-6">إشعار مهم</h3>
+              <p class="fs-14px mb-0">
+                يرجى قراءة شروط الخدمة هذه بعناية قبل استخدام موقعنا. بالوصول أو استخدام عدسة، فإنك
+                توافق على الالتزام بهذه الشروط.
+              </p>
+            </div>
+          </div>
+          <app-policy
+            paragraph="بالوصول أو استخدام عدسة، فإنك توافق على الالتزام بشروط الخدمة هذه وجميع القوانين واللوائح المعمول بها. إذا لم توافق على أي من هذه الشروط، فأنت ممنوع من استخدام هذا الموقع أو الوصول إليه."
+            title="الموافقة على الشروط"
+            [index]="1"
+          ></app-policy>
+          <app-policy
+            paragraph="يُمنح الإذن للوصول المؤقت إلى المواد على موقع عدسة للعرض الشخصي غير التجاري فقط. هذا منح ترخيص وليس نقل ملكية."
+            title="رخصة الاستخدام"
+            [index]="2"
+            titleHeaderDesc="بموجب هذا الترخيص لا يجوز لك:"
+            [paragraphsDesc]="[
+              'تعديل أو نسخ المواد',
+              'استخدام المواد لأي غرض تجاري أو للعرض العام',
+              'محاولة فك أو عكس هندسة أي برنامج على الموقع',
+              'إزالة أي حقوق نشر أو علامات ملكية من المواد',
+              'نقل المواد إلى شخص آخر أو نسخها على أي خادم آخر',
+            ]"
+          ></app-policy>
+          <app-policy
+            paragraph='المواد الموجودة على موقع عدسة مقدمة على أساس "كما هي". عدسة لا يقدم أي ضمانات، صريحة أو ضمنية، ويخلي مسؤوليته من جميع الضمانات الأخرى.'
+            title="إخلاء المسؤولية"
+            [index]="3"
+          ></app-policy>
+
+          <app-policy
+            paragraph="في أي حال من الأحوال، لن يكون عدسة أو مورديه مسؤولين عن أي أضرار ناتجة عن استخدام أو عدم القدرة على استخدام المواد على الموقع."
+            title="القيود"
+            [index]="4"
+          ></app-policy>
+
+          <app-policy
+            paragraph="إذا نشرت محتوى على موقعنا (مثل التعليقات)، فإنك تمنحنا ترخيصاً غير حصري وعالمي ومجاني لاستخدام هذا المحتوى وإعادة إنتاجه وتعديله وتوزيعه."
+            title="محتوى المستخدم"
+            [index]="5"
+            titleHeaderDesc="يجب ألا يكون محتواك:"
+            [paragraphsDesc]="[
+              'تشهيرياً أو فاحشاً أو مسيئاً',
+              'انتهاك حقوق الملكية الفكرية للآخرين',
+              'احتواء فيروسات أو أكواد ضارة',
+              'انتهاك أي قوانين أو لوائح معمول بها',
+              'الإعلان عن منتجات أو خدمات غير مصرح بها',
+            ]"
+          ></app-policy>
+          <app-policy
+            paragraph="قد يراجع عدسة شروط الخدمة هذه في أي وقت دون إشعار. باستخدام هذا الموقع، فإنك توافق على الالتزام بالنسخة الحالية من شروط الخدمة."
+            title="التعديلات"
+            [index]="6"
+          ></app-policy>
+          <app-policy
+            paragraph="إذا كان لديك أي أسئلة حول شروط الخدمة هذه، يرجى التواصل معنا:"
+            title="معلومات الاتصال"
+            [index]="7"
+            [email]="email"
+          ></app-policy>
+          <div class="mt-4 p-4 pt-5 terms-footer">
+            <p class="text-neutral-500 fs-14px text-center">
+              باستخدام موقعنا، فإنك توافق على شروط الخدمة هذه. انظر أيضاً
+              <a class="text-orange-500" routerLink="/privacy">سياسة الخصوصية</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

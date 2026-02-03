@@ -1,0 +1,136 @@
+<footer class="position-relative">
+  <div class="position-absolute top-0 background-circle-1 d-none d-lg-block"></div>
+  <div class="position-absolute bottom-0 background-circle-2 d-none d-lg-block"></div>
+  <div class="container-fluid container-lg">
+    <div
+      class="footer-menu row row-cols-1 row-cols-md-2 row-cols-lg-4 py-5 text-white justify-content-between"
+    >
+      <div class="col mb-4">
+        <div class="d-flex align-items-center gap-2">
+          <div class="logo d-flex align-items-center justify-content-center rounded-3 fs-5">
+            <a href="/">
+              <span class="fw-bold fs-5">ع</span>
+            </a>
+          </div>
+          <p class="mb-0 fs-5 lh-base fw-bold">{{ siteInformation.name }}</p>
+        </div>
+        <p class="logo-desc fs-14px lh-base mt-2 text-neutral-500">
+          {{ siteInformation.description }}
+        </p>
+        <div class="d-flex align-items-center gap-3">
+          <a
+            class="footer-link p-2 d-flex align-items-center justify-content-center"
+            [href]="siteInformation.social.twitter"
+            target="_blank"
+          >
+            <i class="fa-brands fa-x-twitter text-neutral-500"></i>
+          </a>
+          <a
+            class="footer-link p-2 d-flex align-items-center justify-content-center"
+            [href]="siteInformation.social.github"
+            target="_blank"
+          >
+            <i class="fa-brands fa-github text-neutral-500"></i>
+          </a>
+          <a
+            class="footer-link p-2 d-flex align-items-center justify-content-center"
+            [href]="siteInformation.social.linkedin"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin text-neutral-500"></i>
+          </a>
+          <a
+            class="footer-link p-2 d-flex align-items-center justify-content-center"
+            [href]="siteInformation.social.youtube"
+            target="_blank"
+          >
+            <i class="fa-brands fa-youtube text-neutral-500"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="col mb-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <span class="line-style d-flex"></span>
+          <h5 class="mb-0">استكشف</h5>
+        </div>
+
+        <ul class="nav pe-2 flex-column">
+          <li class="nav-item mb-3 d-flex align-items-center">
+            <i class="fa-solid fa-angle-left fs-12px"></i>
+            <a routerLink="/" class="nav-link p-0 text-body-secondary">الرئيسية</a>
+          </li>
+          <li class="nav-item mb-3 d-flex align-items-center">
+            <i class="fa-solid fa-angle-left fs-12px"></i>
+            <a routerLink="/blog" class="nav-link p-0 text-body-secondary">المدونة</a>
+          </li>
+          <li class="nav-item mb-3 d-flex align-items-center">
+            <i class="fa-solid fa-angle-left fs-12px"></i>
+            <a routerLink="/about" class="nav-link p-0 text-body-secondary">من نحن</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col mb-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <span class="line-style d-flex"></span>
+          <h5 class="mb-0">التصنيفات</h5>
+        </div>
+
+        <ul class="nav pe-2 flex-column">
+          <li class="nav-item mb-3 d-flex align-items-center">
+            <i class="fa-solid fa-angle-left fs-12px"></i>
+            <a routerLink="/blog?category=اضاءه" class="nav-link p-0 text-body-secondary">إضاءة</a>
+          </li>
+          <li class="nav-item mb-3 d-flex align-items-center">
+            <i class="fa-solid fa-angle-left fs-12px"></i>
+            <a routerLink="/blog?category=بورتريه" class="nav-link p-0 text-body-secondary"
+              >بورتريه</a
+            >
+          </li>
+          <li class="nav-item mb-3 d-flex align-items-center">
+            <i class="fa-solid fa-angle-left fs-12px"></i>
+            <a routerLink="/blog?category=مناظر طبيعية" class="nav-link p-0 text-body-secondary"
+              >مناظر طبيعية</a
+            >
+          </li>
+          <li class="nav-item mb-3 d-flex align-items-center">
+            <i class="fa-solid fa-angle-left fs-12px"></i>
+            <a routerLink="/blog?category=تقنيات" class="nav-link p-0 text-body-secondary"
+              >تقنيات</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="col mb-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <span class="line-style d-flex"></span>
+          <h5 class="mb-0">ابقى على اطلاع</h5>
+        </div>
+        <p class="text-neutral-500">اشترك للحصول على أحدث المقالات والتحديثات.</p>
+        <form class="d-flex flex-column">
+          <input
+            class="input-primary"
+            type="text"
+            name="email"
+            id="email"
+            placeholder="ادخل بريدك الإلكتروني"
+          />
+          <button class="mt-2 border-0 btn-primary">اشترك</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="copyrights">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="copyrights-text">
+        <p class="mb-0 text-neutral-600">
+          © 2026 عدسة. صنع بكل <i class="fa-solid fa-heart text-orange-500"></i> جميع الحقوق محفوظة.
+        </p>
+      </div>
+      <div class="d-flex align-items-center gap-3 copyrights-links">
+        <a class="text-neutral-600" routerLink="/privacy" data-discover="true">سياسة الخصوصية</a>
+        <a class="text-neutral-600" routerLink="/terms" data-discover="true">شروط الخدمة</a>
+      </div>
+    </div>
+  </div>
+</footer>

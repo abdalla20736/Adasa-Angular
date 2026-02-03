@@ -1,0 +1,24 @@
+.fa-xmark {
+  color: oklch(70.4% 0.191 22.216);
+  font-size: 14px;
+}
+
+.index-icon {
+  background: linear-gradient(to bottom right, var(--color-orange-500), var(--color-yellow-500));
+  width: 32px;
+  height: 32px;
+
+  span {
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+h2 {
+  font-size: 24px;
+}
+
+.check-icon {
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-orange-500);
+}

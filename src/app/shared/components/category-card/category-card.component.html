@@ -1,0 +1,21 @@
+<a class="category-card-link" [routerLink]="link" [queryParams]="{ category: param }">
+  <div class="category-card rounded-4 p-4">
+    <div class="position-relative">
+      <div>
+        <div class="category-icon d-flex align-items-center justify-content-center rounded-4">
+          <i class="fa-solid {{ icon }} text-orange-500"> </i>
+        </div>
+        <h3>{{ title }}</h3>
+        <span class="text-neutral-400">{{ blogsQuantity }} مقالة</span>
+      </div>
+
+      <div>
+        <div
+          class="category-icon-hover rounded-circle position-absolute d-flex align-items-center justify-content-center"
+        >
+          <i class="fa-solid fa-angle-left"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>

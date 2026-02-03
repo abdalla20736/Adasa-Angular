@@ -1,0 +1,194 @@
+.error {
+  background-color: rgb(10, 10, 10);
+}
+
+.error .glow-orange-effect {
+  filter: blur(100px);
+  background: oklab(0.705 0.143615 0.157301 / 0.9);
+  top: 40%;
+  left: 35%;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+}
+
+.error .glow-yellow-effect {
+  filter: blur(100px);
+  background: oklab(0.795 0.0126846 0.183562 / 0.3);
+  right: 40%;
+  bottom: 40%;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+}
+
+.error .errorGrid {
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(38, 38, 38, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 38, 38, 0.5) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.background-circle-1 {
+  filter: blur(40px);
+  color: #ff690033;
+  font-size: 180px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.error .errorContent {
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 100px 16px;
+}
+
+.error .errorContent h1 {
+  font-size: 140px;
+  background: linear-gradient(
+    to right,
+    oklch(0.705 0.213 47.604) 0%,
+    oklch(0.795 0.184 86.047) 50%,
+    oklch(0.705 0.213 47.604) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.error .errorContent .errorEmoji {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  background: linear-gradient(
+    to right bottom,
+    oklab(0.705 0.143615 0.157301 / 0.2) 0%,
+    oklab(0.795 0.0126846 0.183562 / 0.2) 100%
+  );
+  border: 1px solid oklab(0.705 0.143615 0.157301 / 0.3);
+  position: relative;
+  svg {
+    width: 56px;
+    height: 56px;
+    stroke: var(--color-orange-500);
+  }
+}
+
+.error .errorContent .errorEmoji .square {
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
+  background-color: var(--color-orange-500);
+  top: -10px;
+  right: -5px;
+  transform: rotate(12deg);
+  position: absolute;
+  animation: jump 1s infinite;
+}
+
+.error .errorContent .errorEmoji .dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--color-yellow-500);
+  bottom: 0;
+  left: -5px;
+  position: absolute;
+  animation: light 2s ease-in-out infinite;
+}
+
+.error .errorContent h2 {
+  font-size: 24px;
+}
+
+.error .errorContent p {
+  margin-bottom: 32px;
+}
+
+.error .errorContent .buttons {
+  margin-bottom: 48px;
+}
+
+.error .errorContent .Link {
+  text-decoration: none;
+}
+
+.error .errorContent .Link:hover {
+  color: var(--color-orange-400);
+  text-decoration: underline;
+}
+
+.links-menu {
+  border-top: 1px solid #262626;
+  width: 500px;
+}
+
+@media (min-width: 768px) {
+  .error .glowOrangeEffect {
+    top: 160px;
+    left: 175px;
+  }
+  .error .glowYellowEffect {
+    right: 175px;
+    bottom: 160px;
+  }
+  .error .errorContent {
+    margin: 0 128px;
+  }
+  .error .errorContent h1 {
+    font-size: 180px;
+  }
+  .error .errorContent h2 {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .error .glowOrangeEffect {
+    background: oklab(0.705 0.143615 0.157301 / 0.2);
+    top: 80px;
+    left: 350px;
+    width: 300px;
+  }
+  .error .glowYellowEffect {
+    background: oklab(0.795 0.0126846 0.183562 / 0.1);
+    right: 250px;
+    bottom: 300px;
+    width: 300px;
+  }
+  .error .errorContent {
+    margin: 0 256px;
+  }
+  .error .errorContent h1 {
+    font-size: 180px;
+  }
+  .error .errorContent h2 {
+    font-size: 30px;
+  }
+}
+
+@keyframes light {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(5px) rotate(12deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(12deg);
+  }
+  100% {
+    transform: translateY(5px) rotate(12deg);
+  }
+}

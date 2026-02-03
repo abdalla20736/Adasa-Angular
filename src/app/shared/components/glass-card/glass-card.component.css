@@ -1,0 +1,8 @@
+.glass-card {
+  background-color: #161614;
+  border: 1px rgb(38, 38, 38) solid;
+  transition: all 0.3s;
+  &:hover {
+    transform: scale(1.05);
+  }
+}

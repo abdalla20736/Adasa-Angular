@@ -1,0 +1,61 @@
+<div class="error position-relative vh-100">
+  <div class="glow-orange-effect position-absolute"></div>
+  <div class="glow-yellow-effect position-absolute"></div>
+  <div class="errorGrid position-absolute"></div>
+
+  <div
+    class="absolute background-circle-2 w-80 h-80 bg-yellow-500/10 rounded-full blur-[100px] animate-[float_8s_ease-in-out_infinite_1s]"
+  ></div>
+  <div
+    class="errorContent position-absolute d-flex flex-column align-items-center justify-content-center"
+  >
+    <div class="position-relative">
+      <div class="position-absolute background-circle-1"></div>
+      <h1 class="mb-0 fw-bold">404</h1>
+    </div>
+
+    <div class="errorEmoji position-relative mb-5 d-flex align-items-center justify-content-center">
+      <div class="square position-absolute"></div>
+      <div class="dot position-absolute"></div>
+      <svg class="w-14 h-14 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"
+          d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        ></path>
+      </svg>
+    </div>
+
+    <h2 class="text-white mb-3 fw-semibold">عفواً! الصفحة غير موجودة</h2>
+    <p class="text-neutral-400 fw-medium text-center fs-18px">
+      الصفحة التي تبحث عنها غير موجودة أو تم نقلها. دعنا نعيدك إلى المسار الصحيح.
+    </p>
+
+    <div
+      class="buttons d-flex flex-column flex-md-row align-items-md-center justify-content-md-center gap-3 w-100"
+    >
+      <a class="text-decoration-none" routerLink="/">
+        <button class="btn-primary text-white fw-bold w-100">
+          <i class="fa-regular fa-home ms-2"></i> الذهاب للرئيسية
+        </button>
+      </a>
+      <a class="text-decoration-none" routerLink="/blog">
+        <button class="btn-secondary fw-bold w-100">
+          <i class="fa-solid fa-newspaper ms-2"></i> تصفح المقالات
+        </button>
+      </a>
+    </div>
+
+    <div class="links-menu d-flex align-items-center justify-content-center flex-column pt-4">
+      <p class="fs-14px text-neutral-500 mb-3">قد تجد هذه مفيدة:</p>
+      <div class="d-flex flex-row gap-3 mb-2">
+        <a class="Link text-orange-500 fw-medium fs-14px" routerLink="/blog">المدونة</a>
+        <span class="d-none d-md-block text-neutral-500">•</span>
+        <a class="Link text-orange-500 fw-medium fs-14px" routerLink="/about">من نحن</a>
+        <span class="d-none d-md-block text-neutral-500">•</span>
+        <a class="Link text-orange-500 fw-medium fs-14px" routerLink="/privacy">الخصوصية</a>
+      </div>
+    </div>
+  </div>
+</div>
