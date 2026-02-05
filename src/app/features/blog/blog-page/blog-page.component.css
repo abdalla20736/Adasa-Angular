@@ -54,9 +54,9 @@ section {
     height: 20px;
   }
   form {
-    min-width: 300px;
+    max-width: 300px;
     input {
-      min-width: 300px;
+      max-width: 300px;
     }
   }
   .category-btn {

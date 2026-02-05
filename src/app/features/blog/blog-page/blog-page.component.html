@@ -1,5 +1,5 @@
 <main>
-  <section class="position-relative hero p-5 z-10">
+  <section class="position-relative hero p-5 z-10 overflow-hidden">
     <div class="blog-grid"></div>
     <div class="position-absolute rounded-circle background-circle-1"></div>
     <div class="position-absolute rounded-circle background-circle-2"></div>
@@ -21,7 +21,7 @@
         class="filter-menu d-flex justify-content-between align-items-center py-3 flex-column flex-md-row gap-3 w-100"
       >
         <form class="d-flex flex-grow-1 flex-md-grow-0 w-100">
-          <div class="d-flex align-items-center position-relative flex-fill flex-md-grow-0">
+          <div class="d-flex align-items-center position-relative flex-fill flex-md-grow-0 w-100">
             <i
               class="fas fa-search text-neutral-500 fs-5 position-absolute icon-search translate-middle-y"
             ></i>
@@ -141,7 +141,7 @@
       </div>
 
       <div class="pagination d-flex flex-column justify-content-center align-items-center">
-        <div class="d-flex justify-content-center gap-2 flex-wrap">
+        <div class="d-flex justify-content-center gap-2">
           <button
             (click)="previousPage()"
             class="pagination-btn d-flex align-items-center justify-content-center"
@@ -160,7 +160,7 @@
           <div class="d-flex align-items-center justify-content-center gap-1">
             @for (page of pages; track $index) {
               <button
-                class="pagination-btn text-center"
+                class="pagination-btn text-center w-100"
                 (click)="goToPage(page - 1)"
                 [class.active]="currentPage == page - 1"
               >

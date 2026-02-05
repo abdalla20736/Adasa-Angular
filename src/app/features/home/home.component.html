@@ -1,5 +1,5 @@
-<main>
-  <section class="position-relative hero p-5">
+<main class="">
+  <section class="position-relative hero py-5 px-lg-4 overflow-hidden">
     <div class="hero-grid"></div>
     <div class="position-absolute rounded-circle background-circle-1"></div>
     <div class="position-absolute rounded-circle background-circle-2"></div>
@@ -7,18 +7,20 @@
       class="position-absolute rounded-circle background-circle-3 top-50 start-50 translate-middle"
     ></div>
 
-    <div class="container">
+    <div class="container-fluid container-lg">
       <div
         class="position-relative hero-info d-flex align-items-center justify-content-center flex-column text-center"
       >
         <app-badge> </app-badge>
-        <h1 class="header-title">
+        <h1 class="header-title w-100">
           اكتشف <span class="gradient-text">فن</span> <br />التصوير الفوتوغرافي
         </h1>
         <p class="text-neutral-400 fs-4 mb-5">
           انغمس في أسرار المحترفين ونصائح عملية لتطوير مهاراتك في التصوير.
         </p>
-        <div class="d-flex align-items-center flex-column flex-sm-row gap-3 mb-5">
+        <div
+          class="d-flex align-items-center flex-column flex-sm-row gap-3 mb-5 w-100 justify-content-center"
+        >
           <a routerLink="/blog" class="btn-primary blog-btn d-flex align-items-center gap-1">
             <span class="text-white">استكشف المقالات</span>
             <i class="fa-solid fa-arrow-right"></i>
@@ -28,7 +30,7 @@
             <span>اعرف المزيد </span>
           </a>
         </div>
-        <div class="row row-cols-2 row-cols-md-4 g-4 w-100">
+        <div class="glass-cards-container row row-cols-2 row-cols-md-4 g-3">
           <div class="col">
             <app-grass-card value="+50" desc="مقالة" icon="fa-newspaper"></app-grass-card>
           </div>
@@ -79,7 +81,7 @@
           <p class="section-desc-2 mb-0 mt-3 text-neutral-400">اعثر على محتوى مصمم حسب اهتماماتك</p>
         </div>
       </div>
-      <div class="row row-cols-2 row-cols-md-4 g-4 w-100">
+      <div class="row row-cols-2 row-cols-md-4 g-4 w-100 align-items-center">
         <div class="col">
           <app-category-card
             title="إضاءة"
@@ -134,7 +136,7 @@
     </div>
   </section>
 
-  <section class="latest-articles position-relative">
+  <section class="latest-articles position-relative overflow-x-hidden">
     <div class="position-absolute top-0 start-0 overlay overlay-2 h-100 z-n1"></div>
     <div class="container">
       <div class="section-blog-info mb-5">
@@ -158,13 +160,11 @@
     </div>
   </section>
 
-  <section class="subscribe-in position-relative z-3">
-    <div
-      class="position-absolute top-0 start-50 translate-middle-x rounded-circle overlay-3 h-100"
-    ></div>
+  <section class="subscribe-in position-relative z-3 overflow-x-hidden">
+    <div class="position-absolute top-0 start-50 translate-middle-x rounded-circle overlay-3"></div>
     <div class="container d-flex align-items-center justify-content-center">
       <div class="subscribe-form rounded-4 z-3">
-        <div class="text-center">
+        <div class="text-center overflow-x-hidden">
           <div
             class="subscribe-icon rounded-4 d-flex align-items-center justify-content-center mb-3 mx-auto"
           >

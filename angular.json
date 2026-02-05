@@ -71,6 +71,7 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
+            "baseHref": "/adasa-angular/",
             "polyfills": ["zone.js", "zone.js/testing", "@angular/localize/init"],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
